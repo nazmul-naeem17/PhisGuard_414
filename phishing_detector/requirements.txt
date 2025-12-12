@@ -1,0 +1,15 @@
+pandas
+numpy
+scikit-learn
+imbalanced-learn
+xgboost
+catboost
+joblib
+flask
+flask-cors
+requests
+beautifulsoup4
+tldextract
+python-whois
+cryptography
+tqdm

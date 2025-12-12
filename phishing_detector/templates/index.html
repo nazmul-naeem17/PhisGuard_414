@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PhishGuard 414 — Tamper-Resistant Phishing Verdicts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <!-- Gradient aurora -->
+  <div class="bg-aurora"></div>
+
+  <!-- Top nav -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <img src="/static/logo.svg" alt="PhishGuard 414" class="logo" />
+        <span class="brand-name">PhishGuard 414</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#verify">Verify</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Detect. Verify. <span class="accent">Trust.</span></h1>
+        <p class="sub">
+          Paste any link and get a cryptographically signed, tamper-resistant verdict with
+          calibrated probabilities, freshness, and proof.
+        </p>
+
+        <div class="input-card">
+          <div class="input-row">
+            <input id="urlInput" type="text" placeholder="https://example.com/login?continue=..." />
+            <button id="checkBtn" class="btn">Check Link</button>
+          </div>
+          <div class="hint">Tip: Shortened links will be expanded automatically before analysis.</div>
+        </div>
+
+        <div class="stats-row" id="quickStats" hidden>
+          <div class="stat">
+            <div class="stat-label">Verdict</div>
+            <div class="stat-value" id="verdictPill">—</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Phishing Probability</div>
+            <div class="progress">
+              <div class="bar" id="probBar" style="width:0%"></div>
+            </div>
+            <div class="progress-meta"><span id="probPct">0%</span> &nbsp;•&nbsp; τ=<span id="tau">0.50</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <img src="/static/hero.svg" alt="PhishGuard hero" class="hero-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="results">
+    <div class="container grid-2">
+      <div class="card" id="resultCard" hidden>
+        <div class="card-title">Signed Verdict</div>
+        <div class="kv"><span>URL</span><code id="outUrl">—</code></div>
+        <div class="kv"><span>Prediction</span><span id="outPred">—</span></div>
+        <div class="kv"><span>Probability (phish)</span><span id="outProb">—</span></div>
+        <div class="kv"><span>Threshold</span><span id="outTau">—</span></div>
+        <div class="kv"><span>Features</span><span id="outFeat">—</span></div>
+        <div class="kv"><span>Model</span><span id="outModel">—</span></div>
+        <div class="kv"><span>Issued</span><span id="outIat">—</span></div>
+        <div class="kv"><span>Expires</span><span id="outExp">—</span></div>
+        <div class="kv"><span>Nonce</span><code id="outNonce">—</code></div>
+      </div>
+
+      <div class="card" id="verifyCard" hidden>
+        <div class="card-title">Cryptographic Proof</div>
+        <div class="mono small">Signature (RSA PKCS#1 v1.5 / SHA-256)</div>
+        <div class="scroll mono" id="outSig">—</div>
+        <div class="row">
+          <button id="verifyBtn" class="btn subtle">Verify Signature</button>
+          <span id="verifyStatus" class="verify-status">—</span>
+        </div>
+        <details id="pubkeyBox">
+          <summary>Public Key (PEM)</summary>
+          <div class="scroll mono small" id="outPub">—</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how" id="how">
+    <div class="container grid-3">
+      <div class="chip">1</div>
+      <div class="chip">2</div>
+      <div class="chip">3</div>
+      <div class="card mini">
+        <div class="card-title">Feature Extraction</div>
+        <p>86 features: URL heuristics, WHOIS age, DOM cues, and CT checks. Short links are expanded.</p>
+      </div>
+      <div class="card mini">
+        <div class="card-title">Calibrated ML</div>
+        <p>SMOTE inside CV. Isotonic calibration for reliable probabilities across domains.</p>
+      </div>
+      <div class="card mini">
+        <div class="card-title">Signed Verdict</div>
+        <p>Each verdict includes <em>nonce</em>, <em>iat</em>, <em>exp</em>, an HMAC, and an RSA signature.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="about">
+    <div class="container foot-grid">
+      <div class="brand">
+        <img src="/static/logo.svg" class="logo sm" alt="" />
+        <span class="brand-name">PhishGuard 414</span>
+      </div>
+      <div class="foot-note">© <span id="y"></span> PhishGuard 414. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

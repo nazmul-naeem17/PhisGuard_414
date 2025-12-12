@@ -1,0 +1,22 @@
+<svg width="240" height="48" viewBox="0 0 240 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"></stop>
+      <stop offset="100%" stop-color="#22d3ee"></stop>
+    </linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".35"></feDropShadow>
+    </filter>
+  </defs>
+  <!-- shield -->
+  <g transform="translate(2,2)" filter="url(#s)">
+    <path d="M20 0l16 6v12c0 12-7 20-16 24C11 38 4 30 4 18V6l16-6z" fill="url(#g)"></path>
+    <path d="M20 8l10 3v7c0 8-5 14-10 17c-5-3-10-9-10-17v-7l10-3z" fill="#0b1020" opacity=".35"></path>
+    <path d="M15 18c0-3 2-5 5-5s5 2 5 5v3h2v8H13v-8h2v-3z" fill="#e6e9ef"></path>
+  </g>
+  <!-- wordmark -->
+  <g transform="translate(52,8)">
+    <text x="0" y="22" font-family="Inter,Segoe UI,Arial" font-weight="800" font-size="20" fill="url(#g)">PhishGuard</text>
+    <text x="134" y="22" font-family="Inter,Segoe UI,Arial" font-weight="800" font-size="20" fill="#e6e9ef">414</text>
+  </g>
+</svg>

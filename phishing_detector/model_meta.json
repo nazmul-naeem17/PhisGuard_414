@@ -1,0 +1,1 @@
+{"best_model": "ExtraTrees", "cv_scores": {"ExtraTrees": 1.0, "XGBoost": 1.0, "RandomForest": 1.0, "AdaBoost": 0.9976744186046511, "GradBoost": 1.0, "LogReg": 1.0, "NaiveBayes": 1.0, "CatBoost": 1.0}, "threshold": 0.1}

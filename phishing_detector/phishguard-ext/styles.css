@@ -1,0 +1,51 @@
+/* styles.css */
+
+.phishguard-badge {
+  font-size: 11px;
+  margin-left: 4px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: sans-serif;
+  position: relative;
+  top: -1px;
+  z-index: 9999;
+  background-color: #4caf50; /* green */
+  color: white;
+}
+
+.phishguard-badge.phish {
+  background-color: #f44336; /* red */
+}
+
+/* Modal overlay */
+#phishguard-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.phishguard-modal-content {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#phishguard-close {
+  margin-top: 12px;
+  padding: 6px 12px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}

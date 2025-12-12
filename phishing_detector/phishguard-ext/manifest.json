@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "PhishGuard Link-Safe",
+  "version": "1.0",
+  "description": "Hover links to see phishing probability; block high-risk clicks.",
+  "permissions": ["scripting"],
+  "host_permissions": [
+    "http://127.0.0.1:5000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}
